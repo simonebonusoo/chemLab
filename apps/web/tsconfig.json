@@ -1,0 +1,17 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "moduleResolution": "Bundler",
+    "noEmit": true,
+    "types": ["vite/client", "vitest/globals"],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@chemlab/types": ["../../packages/types/src/index.ts"],
+      "@chemlab/chemistry": ["../../packages/chemistry/src/index.ts"],
+      "@chemlab/plugins-sdk": ["../../packages/plugins-sdk/src/index.ts"]
+    }
+  },
+  "include": ["src", "vite.config.ts"]
+}

@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light dark;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  @apply bg-graphite-50 text-graphite-900 antialiased;
+}
+
+.dark body {
+  @apply bg-graphite-900 text-graphite-100;
+}
+
+/* Focus visibility for accessibility */
+:focus-visible {
+  @apply outline-none ring-2 ring-brand-500 ring-offset-1;
+}
+
+.dark :focus-visible {
+  @apply ring-offset-graphite-900;
+}
+
+/* Thin scrollbars */
+* {
+  scrollbar-width: thin;
+}
+
+/* TipTap editor content */
+.ProseMirror {
+  @apply min-h-[300px] outline-none;
+}
+.ProseMirror p {
+  @apply my-2 leading-relaxed;
+}
+.ProseMirror h1 {
+  @apply text-2xl font-bold mt-6 mb-2;
+}
+.ProseMirror h2 {
+  @apply text-xl font-semibold mt-5 mb-2;
+}
+.ProseMirror h3 {
+  @apply text-lg font-semibold mt-4 mb-1;
+}
+.ProseMirror ul {
+  @apply list-disc pl-6 my-2;
+}
+.ProseMirror ol {
+  @apply list-decimal pl-6 my-2;
+}
+.ProseMirror blockquote {
+  @apply border-l-4 border-brand-300 pl-4 italic text-graphite-500 my-3;
+}
+.ProseMirror pre {
+  @apply bg-graphite-900 text-graphite-50 rounded-lg p-3 my-3 text-sm overflow-x-auto;
+}
+.ProseMirror code {
+  @apply bg-graphite-100 dark:bg-graphite-800 rounded px-1 py-0.5 text-sm;
+}
+.ProseMirror table {
+  @apply border-collapse my-3 w-full;
+}
+.ProseMirror td,
+.ProseMirror th {
+  @apply border border-graphite-200 dark:border-graphite-700 p-2;
+}
+.ProseMirror:focus {
+  @apply outline-none;
+}
+.ProseMirror p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  @apply text-graphite-400 float-left h-0 pointer-events-none;
+}
